@@ -125,6 +125,11 @@ main{max-width:1280px;margin:0 auto;padding:0 36px 80px}
 .ex-label{width:38%;font-weight:700;color:var(--gray-900);white-space:nowrap;padding-right:8px}
 .ex-desc{color:var(--gray-700);line-height:1.55}
 
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--gray-900);color:var(--yellow);border:none;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity 0.2s,transform 0.2s;z-index:200}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{background:var(--gray-700);transform:translateY(-2px)}
+
 /* FOOTER */
 footer{text-align:center;padding:20px 16px;font-size:0.75rem;color:var(--gray-500);border-top:1px solid var(--gray-200);background:var(--white)}
 footer strong{color:var(--yellow-deep)}
@@ -517,6 +522,8 @@ footer a:hover{text-decoration:underline}
 
 </main>
 
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver al inicio">↑</button>
+
 <footer>
   <strong>EduMed UVa</strong> · Unidad de Educación Médica · Facultad de Medicina · Universidad de Valladolid · 2026
   &nbsp;·&nbsp; Contacto: <a href="mailto:luis.corral@uva.es">luis.corral@uva.es</a>
@@ -524,6 +531,8 @@ footer a:hover{text-decoration:underline}
 </footer>
 
 <script>
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 300));
 function switchTab(id, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
