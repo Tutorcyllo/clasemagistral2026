@@ -10,7 +10,7 @@
   --yellow:#F5C518;--yellow-mid:#FEF0A0;--yellow-pale:#FFFDE7;--yellow-deep:#D4A000;
   --gray-900:#111318;--gray-700:#3D4451;--gray-500:#6B7280;--gray-300:#D1D5DB;
   --gray-200:#E5E7EB;--gray-100:#F3F4F6;--gray-50:#F9FAFB;--white:#FFFFFF;
-  --radius:10px;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 12px rgba(0,0,0,0.10);--shadow-lg:0 8px 24px rgba(0,0,0,0.13);
+  --radius:10px;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 12px rgba(0,0,0,0.10);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Figtree',sans-serif;background:var(--gray-100);color:var(--gray-900);min-height:100vh}
@@ -48,7 +48,7 @@ main{max-width:1280px;margin:0 auto;padding:0 36px 80px}
 
 /* CARDS */
 .card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);margin-bottom:14px}
-.card-title{font-size:1rem;font-weight:700;color:var(--gray-900);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.card-title{font-size:1rem;font-weight:700;color:var(--gray-900);margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .card-body{font-size:0.875rem;color:var(--gray-700);line-height:1.65}
 .card-body p{margin-bottom:10px}.card-body p:last-child{margin-bottom:0}
 
@@ -63,11 +63,12 @@ main{max-width:1280px;margin:0 auto;padding:0 36px 80px}
 /* TWO-COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 
-/* KEY POINTS */
-.key-points-list{list-style:none;padding:0}
-.key-points-list li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-100);font-size:0.875rem;color:var(--gray-700);line-height:1.55}
-.key-points-list li:last-child{border-bottom:none}
-.kp-dot{width:8px;height:8px;border-radius:50%;background:var(--yellow-deep);flex-shrink:0;margin-top:5px}
+/* VALID ZONES */
+.valid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.valid-item{background:var(--yellow-pale);border:1px solid var(--yellow-mid);border-radius:8px;padding:14px 16px}
+.valid-icon{font-size:1.3rem;margin-bottom:6px}
+.valid-title{font-size:0.82rem;font-weight:700;color:var(--gray-900);margin-bottom:4px}
+.valid-desc{font-size:0.78rem;color:var(--gray-700);line-height:1.55}
 
 /* QUOTE */
 .quote-block{background:var(--gray-900);color:var(--yellow);border-radius:var(--radius);padding:20px 24px 20px 28px;margin-bottom:14px;font-size:0.95rem;font-weight:600;line-height:1.6;font-style:italic;border-left:4px solid var(--yellow-deep)}
@@ -114,11 +115,15 @@ main{max-width:1280px;margin:0 auto;padding:0 36px 80px}
 .a-img{width:100%;height:auto;border-radius:8px;margin-top:16px;margin-bottom:4px;border:1px solid var(--gray-200)}
 .a-desc{font-size:0.875rem;color:var(--gray-700);line-height:1.65;margin-top:16px;margin-bottom:16px;padding:14px 16px;background:var(--gray-50);border-radius:8px;border-left:3px solid var(--yellow-deep)}
 .a-examples-title{font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-500);margin-bottom:10px}
-.examples-list{display:flex;flex-direction:column;gap:8px}
-.example-item{display:flex;gap:12px;align-items:flex-start;background:var(--yellow-pale);border:1px solid var(--yellow-mid);border-radius:8px;padding:12px 14px}
-.ex-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.ex-text{font-size:0.845rem;color:var(--gray-700);line-height:1.55}
-.ex-text strong{color:var(--gray-900);font-weight:700}
+
+/* EXAMPLES TABLE */
+.ex-table{width:100%;border-collapse:collapse;font-size:0.845rem}
+.ex-table tr{border-bottom:1px solid var(--yellow-mid)}
+.ex-table tr:last-child{border-bottom:none}
+.ex-table td{padding:10px 12px;vertical-align:top;background:var(--yellow-pale)}
+.ex-table tr:nth-child(even) td{background:var(--white);border-top:1px solid var(--yellow-mid)}
+.ex-label{width:38%;font-weight:700;color:var(--gray-900);white-space:nowrap;padding-right:8px}
+.ex-desc{color:var(--gray-700);line-height:1.55}
 
 /* FOOTER */
 footer{text-align:center;padding:20px 16px;font-size:0.75rem;color:var(--gray-500);border-top:1px solid var(--gray-200);background:var(--white)}
@@ -126,8 +131,9 @@ footer strong{color:var(--yellow-deep)}
 footer a{color:var(--gray-700);text-decoration:none}
 footer a:hover{text-decoration:underline}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1024px){
+  .valid-grid{grid-template-columns:repeat(2,1fr)}
   .hero-img{max-height:130px;max-width:200px}
   .hero-headline{font-size:1.4rem}
 }
@@ -143,22 +149,23 @@ footer a:hover{text-decoration:underline}
   .hero-headline{font-size:1.2rem}
   .tabs-wrap{padding:16px 16px 0}
   .tabs{width:100%}
-  .tab{font-size:0.75rem;padding:8px 12px;flex:1;text-align:center}
+  .tab{font-size:0.75rem;padding:8px 10px;flex:1;text-align:center}
   main{padding:0 16px 60px}
   .two-col,.concepts-grid,.alumno-grid{grid-template-columns:1fr}
+  .valid-grid{grid-template-columns:1fr}
   .miedo-text{padding:18px 20px}
+  .ex-label{white-space:normal}
 }
 @media(max-width:480px){
   .hero-headline{font-size:1.05rem}
   .hero-sub{font-size:0.8rem}
   .stat-pill{font-size:0.68rem;padding:4px 10px}
-  .tab{font-size:0.7rem;padding:7px 8px}
+  .tab{font-size:0.7rem;padding:7px 6px}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="header-brand">
@@ -172,7 +179,6 @@ footer a:hover{text-decoration:underline}
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
@@ -191,7 +197,6 @@ footer a:hover{text-decoration:underline}
   </div>
 </div>
 
-<!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs">
     <button class="tab active" onclick="switchTab('summary',this)">💥 ¿Por qué importa esto?</button>
@@ -209,7 +214,6 @@ footer a:hover{text-decoration:underline}
     La pregunta no es si debemos abandonar la clase magistral, sino si estamos dispuestos a asumir la responsabilidad pedagógica que implica seguir utilizándola.
   </div>
 
-  <!-- 1. TESIS + ARGUMENTO -->
   <div class="two-col">
     <div class="card">
       <div class="card-title">🎯 Tesis central</div>
@@ -227,7 +231,6 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <!-- 2. LIMITACIONES -->
   <div class="img-card">
     <div class="img-card-header">
       <div class="img-card-title">⚠️ Limitaciones inherentes de la clase magistral</div>
@@ -237,17 +240,50 @@ footer a:hover{text-decoration:underline}
     <div class="img-card-footer">EduMed UVa · Cuaderno 2 · 2026</div>
   </div>
 
-  <!-- 3. MÉTODO VS TÉCNICA -->
   <div class="img-card">
     <div class="img-card-header">
       <div class="img-card-title">⚖️ Método vs. Técnica docente</div>
       <div class="img-card-desc">El caso de John Dron ilustra una paradoja reveladora: un profesor con métodos "deficientes" puede ser excelente gracias a su técnica personal. <strong>La eficacia no reside en el método, sino en la calidad de la enseñanza</strong> — especialmente en la claridad docente y la retroalimentación efectiva.</div>
     </div>
-    <img src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/metodo.PNG" alt="Método vs. Técnica docente" onerror="this.style.background='var(--gray-100)';this.style.minHeight='60px'">
+    <img src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/metodo.PNG" alt="Método vs. Técnica docente">
     <div class="img-card-footer">EduMed UVa · Cuaderno 2 · 2026</div>
   </div>
 
-  <!-- 4. MIEDO -->
+  <!-- ZONAS VÁLIDAS -->
+  <div class="card">
+    <div class="card-title">✅ ¿Cuándo sigue teniendo sentido la clase magistral?</div>
+    <div class="card-body">
+      <p>Asumir las limitaciones de la clase magistral no significa renunciar a ella. Hay situaciones concretas en las que el formato expositivo no solo es válido, sino que puede ser la mejor opción disponible:</p>
+    </div>
+    <div class="valid-grid" style="margin-top:14px">
+      <div class="valid-item">
+        <div class="valid-icon">🔥</div>
+        <div class="valid-title">Inspirar</div>
+        <div class="valid-desc">Cuando el foco no es el conocimiento sino motivar. Transmitir pasión, vocación y la dimensión humana de la medicina.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">🗺️</div>
+        <div class="valid-title">Introducir conceptos</div>
+        <div class="valid-desc">Presentar un tema nuevo a una audiencia grande, crear un mapa mental común antes de profundizar con otras metodologías.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">🧩</div>
+        <div class="valid-title">Sintetizar</div>
+        <div class="valid-desc">Integrar conocimientos dispersos que serían difíciles de conectar para quien aún no es experto.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">🧠</div>
+        <div class="valid-title">Modelar el razonamiento experto</div>
+        <div class="valid-desc">Pensar en voz alta sobre un caso complejo, mostrar cómo un experto aborda la incertidumbre.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">⏳</div>
+        <div class="valid-title">Recursos y tiempo escasos</div>
+        <div class="valid-desc">Cuando no hay tiempo ni recursos. Mejor una buena clase magistral que una metodología activa mal implementada.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="miedo-card">
     <img class="miedo-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/miedo.PNG" alt="¿Realmente puedo abandonar la clase magistral?">
     <div class="miedo-text">
@@ -258,7 +294,6 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <!-- 5. ALUMNO CO-CREADOR -->
   <div class="card" style="margin-bottom:14px">
     <div class="card-title">🎓 El nuevo papel del estudiante: de receptor a co-creador</div>
     <div class="card-body">
@@ -286,6 +321,7 @@ footer a:hover{text-decoration:underline}
   </div>
   <div class="fiveA-grid">
 
+    <!-- A1: ACTIVA -->
     <div class="a-card">
       <div class="a-header" onclick="toggleA(this)">
         <div class="a-number">A</div>
@@ -299,15 +335,21 @@ footer a:hover{text-decoration:underline}
         <img class="a-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/activa.PNG" alt="Activa y abierta">
         <div class="a-desc">Una clase magistral activa está <strong>abierta a la participación</strong>, promueve la activación cognitiva mediante preguntas relevantes, decisiones breves y la implicación del alumnado. El estudiante no es receptor pasivo: interpreta, decide y justifica durante la propia exposición.</div>
         <div class="a-examples-title">💡 Ejemplos para implementar en el aula</div>
-        <div class="examples-list">
-          <div class="example-item"><span class="ex-icon">🩺</span><div class="ex-text"><strong>Pregunta clínica de arranque:</strong> Antes de explicar, plantea un caso real breve. "Tienes 30 segundos: ¿cuál sería tu primer diagnóstico diferencial?" Luego expones y contrastas.</div></div>
-          <div class="example-item"><span class="ex-icon">✋</span><div class="ex-text"><strong>Think-Pair-Share exprés:</strong> A mitad de clase, pausa 2 minutos. "Habla con el compañero: ¿qué mecanismo explica esto?" Una pareja comparte con el grupo. Retomas con la explicación.</div></div>
-          <div class="example-item"><span class="ex-icon">📱</span><div class="ex-text"><strong>Votación en tiempo real con Wooclap/Kahoot:</strong> Lanza una pregunta de opción múltiple. Muestra resultados y comenta los errores más frecuentes en directo, sin calificación.</div></div>
-          <div class="example-item"><span class="ex-icon">❓</span><div class="ex-text"><strong>Cierre con "¿qué no entendiste?":</strong> Reserva los últimos 3 minutos para que cada alumno escriba la idea que menos clara quedó. Léelas en voz alta y responde las más comunes.</div></div>
-        </div>
+        <table class="ex-table">
+          <tr><td class="ex-label">🩺 Pregunta clínica de arranque</td><td class="ex-desc">Antes de explicar, plantea un caso real breve. "Tienes 30 segundos: ¿cuál sería tu primer diagnóstico diferencial?" Luego expones y contrastas.</td></tr>
+          <tr><td class="ex-label">✋ Think-Pair-Share exprés</td><td class="ex-desc">A mitad de clase, pausa 2 minutos. "Habla con el compañero: ¿qué mecanismo explica esto?" Una pareja comparte con el grupo. Retomas con la explicación.</td></tr>
+          <tr><td class="ex-label">📱 Votación en tiempo real</td><td class="ex-desc">Lanza una pregunta de opción múltiple con Wooclap/Kahoot. Muestra resultados y comenta los errores más frecuentes en directo, sin calificación.</td></tr>
+          <tr><td class="ex-label">❓ Cierre con "¿qué no entendiste?"</td><td class="ex-desc">Reserva los últimos 3 minutos para que cada alumno escriba la idea que menos clara quedó. Léelas en voz alta y responde las más comunes.</td></tr>
+          <tr><td class="ex-label">🔬 Predicción antes de la prueba</td><td class="ex-desc">Enseñas una radiografía, ECG o gasometría sin interpretar. "Antes de que lo comentemos: ¿qué hallazgo principal esperas encontrar y por qué?"</td></tr>
+          <tr><td class="ex-label">⚠️ Error frecuente deliberado</td><td class="ex-desc">Presentas una afirmación clínica incorrecta pero plausible. "Muchos residentes se equivocan aquí: ¿qué tiene de problemático este razonamiento?"</td></tr>
+          <tr><td class="ex-label">💊 Mini decisión terapéutica</td><td class="ex-desc">Tras exponer un caso, pides una decisión breve. "Paciente con FA y sangrado digestivo reciente: ¿reiniciarías anticoagulación hoy, en días o no aún?"</td></tr>
+          <tr><td class="ex-label">🗂️ Jerarquización diagnóstica</td><td class="ex-desc">"No me digas 10 diagnósticos diferenciales: dime tus 2 primeros y qué dato te falta para ordenarlos."</td></tr>
+          <tr><td class="ex-label">🔄 Pregunta de transferencia</td><td class="ex-desc">"Si este mismo caso fuera en una gestante / anciano frágil / inmunodeprimido, ¿qué cambiaría de tu enfoque?"</td></tr>
+        </table>
       </div>
     </div>
 
+    <!-- A2: ÁGIL -->
     <div class="a-card">
       <div class="a-header" onclick="toggleA(this)">
         <div class="a-number">A</div>
@@ -321,15 +363,19 @@ footer a:hover{text-decoration:underline}
         <img class="a-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/agil.PNG" alt="Ágil y adaptada">
         <div class="a-desc">Una clase magistral ágil <strong>se adapta al ritmo y nivel del grupo</strong>, segmenta la información en bloques, introduce cambios de formato y gestiona conscientemente la carga cognitiva.</div>
         <div class="a-examples-title">💡 Ejemplos para implementar en el aula</div>
-        <div class="examples-list">
-          <div class="example-item"><span class="ex-icon">⏱️</span><div class="ex-text"><strong>Pausas cada 10-15 minutos:</strong> Diseña la clase en bloques. Al final de cada bloque introduce un respiro: un video de 60 segundos, una imagen diagnóstica o 90 segundos para tomar notas.</div></div>
-          <div class="example-item"><span class="ex-icon">🌡️</span><div class="ex-text"><strong>Termómetro de comprensión:</strong> A la mitad, pide que levanten 1, 2 o 3 dedos según comprensión. Si muchos muestran 1, reduce el ritmo y reformula en tiempo real.</div></div>
-          <div class="example-item"><span class="ex-icon">🖼️</span><div class="ex-text"><strong>Alternancia de formatos:</strong> Combina explicación verbal con imagen clínica, esquema en pizarra en directo y, si encaja, un video corto de 90 segundos.</div></div>
-          <div class="example-item"><span class="ex-icon">✂️</span><div class="ex-text"><strong>Diapositivas minimalistas:</strong> Una idea por diapositiva, imagen + texto mínimo. Menos texto en pantalla = más atención al docente y menor sobrecarga cognitiva.</div></div>
-        </div>
+        <table class="ex-table">
+          <tr><td class="ex-label">⏱️ Pausas cada 10-15 minutos</td><td class="ex-desc">Diseña la clase en bloques. Al final de cada bloque introduce un respiro: un video de 60 segundos, una imagen diagnóstica o 90 segundos para tomar notas.</td></tr>
+          <tr><td class="ex-label">🌡️ Termómetro de comprensión</td><td class="ex-desc">A la mitad, pide que levanten 1, 2 o 3 dedos según comprensión. Si muchos muestran 1, reduce el ritmo y reformula en tiempo real.</td></tr>
+          <tr><td class="ex-label">🖼️ Alternancia de formatos</td><td class="ex-desc">Combina explicación verbal con imagen clínica, esquema en pizarra en directo y, si encaja, un video corto de 90 segundos.</td></tr>
+          <tr><td class="ex-label">✂️ Diapositivas minimalistas</td><td class="ex-desc">Una idea por diapositiva, imagen + texto mínimo. Menos texto en pantalla = más atención al docente y menor sobrecarga cognitiva.</td></tr>
+          <tr><td class="ex-label">🗣️ Resumen en una frase</td><td class="ex-desc">Al cerrar un bloque, pides a dos estudiantes: "Resume la idea clave en una sola frase clínica."</td></tr>
+          <tr><td class="ex-label">🧭 Pausa de reorientación</td><td class="ex-desc">"Llevamos 15 minutos. Hasta ahora solo debéis quedaros con estas dos ideas y una trampa diagnóstica."</td></tr>
+          <tr><td class="ex-label">🔀 Doble ruta preparada</td><td class="ex-desc">Si ves que dominan el concepto, avanzas a un caso complejo; si no, introduces un caso más simple o un esquema visual.</td></tr>
+        </table>
       </div>
     </div>
 
+    <!-- A3: APLICABLE -->
     <div class="a-card">
       <div class="a-header" onclick="toggleA(this)">
         <div class="a-number">A</div>
@@ -343,15 +389,20 @@ footer a:hover{text-decoration:underline}
         <img class="a-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/aplicable.PNG" alt="Aplicable">
         <div class="a-desc">Una clase magistral aplicable está <strong>orientada a problemas reales y marcos del pensamiento médico</strong>, no a listas de datos. El foco está en el razonamiento clínico y las decisiones que el futuro médico tendrá que tomar.</div>
         <div class="a-examples-title">💡 Ejemplos para implementar en el aula</div>
-        <div class="examples-list">
-          <div class="example-item"><span class="ex-icon">🔄</span><div class="ex-text"><strong>Reencuadra el título:</strong> En vez de "Ciclo de Krebs", nómbrala "¿Cómo utilizan mis células los nutrientes?". El conocimiento aparece como respuesta, no como catálogo.</div></div>
-          <div class="example-item"><span class="ex-icon">📋</span><div class="ex-text"><strong>Caso clínico como hilo conductor:</strong> Presenta un paciente real (anonimizado) al inicio y estructura toda la clase para responder sus preguntas diagnósticas y terapéuticas.</div></div>
-          <div class="example-item"><span class="ex-icon">🗺️</span><div class="ex-text"><strong>Algoritmos de decisión en voz alta:</strong> Recorre el árbol de decisión mientras piensas en voz alta. "Aquí descartaría X porque… y elegiría Y porque…"</div></div>
-          <div class="example-item"><span class="ex-icon">⚖️</span><div class="ex-text"><strong>Dilemas clínicos breves:</strong> Plantea una situación con dos opciones razonables y pide que la clase vote. Luego explica qué evidencia inclina la decisión.</div></div>
-        </div>
+        <table class="ex-table">
+          <tr><td class="ex-label">🔄 Reencuadra el título</td><td class="ex-desc">En vez de "Ciclo de Krebs", nómbrala "¿Cómo utilizan mis células los nutrientes?". El conocimiento aparece como respuesta, no como catálogo.</td></tr>
+          <tr><td class="ex-label">📋 Caso clínico como hilo conductor</td><td class="ex-desc">Presenta un paciente real (anonimizado) al inicio y estructura toda la clase para responder sus preguntas diagnósticas y terapéuticas.</td></tr>
+          <tr><td class="ex-label">🗺️ Algoritmos de decisión en voz alta</td><td class="ex-desc">Recorre el árbol de decisión mientras piensas en voz alta. "Aquí descartaría X porque… y elegiría Y porque…"</td></tr>
+          <tr><td class="ex-label">⚖️ Dilemas clínicos breves</td><td class="ex-desc">Plantea una situación con dos opciones razonables y pide que la clase vote. Luego explica qué evidencia inclina la decisión.</td></tr>
+          <tr><td class="ex-label">🧪 Elección del test diagnóstico</td><td class="ex-desc">"Con este cuadro clínico, ¿qué prueba pides primero y cuál descartarías por innecesaria o arriesgada en este contexto?"</td></tr>
+          <tr><td class="ex-label">🏥 Alta o ingreso</td><td class="ex-desc">"¿Qué dato concreto te obliga al ingreso y cuál te permitiría el alta con seguridad?"</td></tr>
+          <tr><td class="ex-label">💀 Jerarquía de gravedad</td><td class="ex-desc">"¿Qué mata antes en este cuadro: la infección, la trombosis o el fallo multiorgánico?"</td></tr>
+          <tr><td class="ex-label">🚫 Qué dejamos de hacer</td><td class="ex-desc">En vez de "¿qué harías?", pregunta "¿qué dejarías de hacer en este paciente y por qué?"</td></tr>
+        </table>
       </div>
     </div>
 
+    <!-- A4: AUTÉNTICA -->
     <div class="a-card">
       <div class="a-header" onclick="toggleA(this)">
         <div class="a-number">A</div>
@@ -365,15 +416,20 @@ footer a:hover{text-decoration:underline}
         <img class="a-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/autentica.PNG" alt="Auténtica">
         <div class="a-desc">Una clase magistral auténtica está <strong>basada en la presencia intelectual del docente</strong>: cada clase es única porque el profesor piensa con el grupo, comparte su experiencia clínica real y permite que la interacción reformule el recorrido planificado.</div>
         <div class="a-examples-title">💡 Ejemplos para implementar en el aula</div>
-        <div class="examples-list">
-          <div class="example-item"><span class="ex-icon">🗣️</span><div class="ex-text"><strong>Anécdota clínica propia:</strong> Una vez por clase, conecta el contenido con algo que hayas vivido. Transmite la dimensión humana que ningún manual ni IA puede replicar.</div></div>
-          <div class="example-item"><span class="ex-icon">🔓</span><div class="ex-text"><strong>Permite que las preguntas cambien el rumbo:</strong> Si surge una pregunta relevante, sigue ese hilo. Muéstralo: "Esta pregunta cambia lo que iba a contar ahora, pero vale la pena…"</div></div>
-          <div class="example-item"><span class="ex-icon">🚶</span><div class="ex-text"><strong>Muévete por el aula:</strong> Sal de detrás de la mesa. Señala con la mano abierta al invitar a participar. La postura y la proximidad física comunican apertura.</div></div>
-          <div class="example-item"><span class="ex-icon">🤝</span><div class="ex-text"><strong>Invita a otros protagonistas:</strong> Una vez al trimestre, incorpora un paciente, otro profesional o un colega de otra especialidad.</div></div>
-        </div>
+        <table class="ex-table">
+          <tr><td class="ex-label">🗣️ Anécdota clínica propia</td><td class="ex-desc">Una vez por clase, conecta el contenido con algo que hayas vivido. Transmite la dimensión humana que ningún manual ni IA puede replicar.</td></tr>
+          <tr><td class="ex-label">🔓 Deja que las preguntas cambien el rumbo</td><td class="ex-desc">Si surge una pregunta relevante, sigue ese hilo. Muéstralo: "Esta pregunta cambia lo que iba a contar ahora, pero vale la pena…"</td></tr>
+          <tr><td class="ex-label">🚶 Muévete por el aula</td><td class="ex-desc">Sal de detrás de la mesa. Señala con la mano abierta al invitar a participar. La postura y la proximidad física comunican apertura.</td></tr>
+          <tr><td class="ex-label">🤝 Invita a otros protagonistas</td><td class="ex-desc">Una vez al trimestre, incorpora un paciente, otro profesional o un colega de otra especialidad.</td></tr>
+          <tr><td class="ex-label">🧠 Comparte tus sesgos</td><td class="ex-desc">Nombra en voz alta un sesgo cognitivo que reconoces en tu propia práctica. "Yo tiendo a infravalorar el dolor abdominal en pacientes con ansiedad. Me ha costado errores."</td></tr>
+          <tr><td class="ex-label">🔄 Muestra un cambio de opinión</td><td class="ex-desc">"Hace diez años yo haría esto. Hoy, con más evidencia y más experiencia, lo haría diferente, y te explico por qué."</td></tr>
+          <tr><td class="ex-label">❓ Reconoce la incertidumbre real</td><td class="ex-desc">Ante casos complejos, muestra que la medicina no siempre tiene respuesta clara. "Honestamente, ante este perfil de paciente, los expertos no nos ponemos de acuerdo."</td></tr>
+          <tr><td class="ex-label">🫀 Contexto humano</td><td class="ex-desc">Conecta el contenido con la dimensión humana del caso: qué implica ese diagnóstico para el paciente, su familia, su trabajo, su vida.</td></tr>
+        </table>
       </div>
     </div>
 
+    <!-- A5: AMPLIABLE -->
     <div class="a-card">
       <div class="a-header" onclick="toggleA(this)">
         <div class="a-number">A</div>
@@ -387,12 +443,16 @@ footer a:hover{text-decoration:underline}
         <img class="a-img" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/ampliable.PNG" alt="Ampliable">
         <div class="a-desc">Una clase magistral ampliable se <strong>prolonga más allá del aula</strong>: es un punto de partida, no de llegada. Mediante recursos digitales, foros y tareas breves, el aprendizaje continúa después del tiempo presencial.</div>
         <div class="a-examples-title">💡 Ejemplos para implementar en el aula</div>
-        <div class="examples-list">
-          <div class="example-item"><span class="ex-icon">📊</span><div class="ex-text"><strong>Infografía resumen en el campus virtual:</strong> Publica tras la clase una infografía con los 3-5 conceptos clave. Un ancla visual del aprendizaje para el repaso.</div></div>
-          <div class="example-item"><span class="ex-icon">🌱</span><div class="ex-text"><strong>Pregunta semilla post-clase:</strong> Al finalizar, lanza una pregunta abierta en el foro. Responde las más interesantes al inicio de la próxima clase.</div></div>
-          <div class="example-item"><span class="ex-icon">📹</span><div class="ex-text"><strong>Microvideo de 3 minutos:</strong> Graba un clip corto reforzando el concepto más difícil. Elige el punto donde más estudiantes se pierden y explícalo en formato distinto.</div></div>
-          <div class="example-item"><span class="ex-icon">🔗</span><div class="ex-text"><strong>Tarea de conexión con la práctica:</strong> "Antes del próximo seminario, busca un caso publicado que ilustre lo que vimos hoy." Conecta la clase con el trabajo autónomo.</div></div>
-        </div>
+        <table class="ex-table">
+          <tr><td class="ex-label">📊 Infografía en el campus virtual</td><td class="ex-desc">Publica tras la clase una infografía con los 3-5 conceptos clave. Un ancla visual del aprendizaje para el repaso.</td></tr>
+          <tr><td class="ex-label">🌱 Pregunta semilla post-clase</td><td class="ex-desc">Al finalizar, lanza una pregunta abierta en el foro. Responde las más interesantes al inicio de la próxima clase.</td></tr>
+          <tr><td class="ex-label">📹 Microvideo de 3 minutos</td><td class="ex-desc">Graba un clip corto reforzando el concepto más difícil. Elige el punto donde más estudiantes se pierden y explícalo en formato distinto.</td></tr>
+          <tr><td class="ex-label">🔗 Tarea de conexión con la práctica</td><td class="ex-desc">"Antes del próximo seminario, busca un caso publicado que ilustre lo que vimos hoy." Conecta la clase con el trabajo autónomo.</td></tr>
+          <tr><td class="ex-label">📱 Webapp resumen con QR</td><td class="ex-desc">Crea una app como esta para resumir el tema y compártela en QR al acabar la clase. Los estudiantes se la llevan en el móvil.</td></tr>
+          <tr><td class="ex-label">📂 Evolución del caso 48h después</td><td class="ex-desc">Cuentas un caso en clase y subes la evolución real del paciente al foro 48 horas después. "¿Cambiarías ahora tu hipótesis o tratamiento?"</td></tr>
+          <tr><td class="ex-label">🎙️ Podcast con tus alumnos</td><td class="ex-desc">Graba un podcast donde un alumno te entrevista sobre las dudas principales del temario. Más cercano y memorable que un resumen escrito.</td></tr>
+          <tr><td class="ex-label">👁️ Microtarea de observación clínica</td><td class="ex-desc">"Durante esta semana, identifica en prácticas un paciente donde aparezca uno de los dilemas vistos hoy y súbelo de forma anonimizada."</td></tr>
+        </table>
       </div>
     </div>
 
@@ -410,7 +470,7 @@ footer a:hover{text-decoration:underline}
     <div class="concept-card">
       <div class="concept-tag">Metodología</div>
       <div class="concept-term">Metodologías activas</div>
-      <div class="concept-def">Enfoques pedagógicos (aula invertida, ABP, simulación, peer-teaching…) que sitúan al estudiante como agente activo. Su impacto es bajo-moderado sin diseño cuidadoso y un docente competente.</div>
+      <div class="concept-def">Enfoques pedagógicos (aula invertida, ABP, simulación, peer-teaching…) que sitúan al estudiante como agente activo. Su impacto es muy variable sin diseño cuidadoso y un docente competente.</div>
     </div>
     <div class="concept-card">
       <div class="concept-tag">Didáctica</div>
@@ -478,9 +538,7 @@ function toggleA(header) {
   if (!isOpen) {
     header.classList.add('open');
     body.classList.add('open');
-    setTimeout(() => {
-      header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 50);
+    setTimeout(() => header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
 }
 </script>
