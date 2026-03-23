@@ -207,7 +207,8 @@ footer a:hover{text-decoration:underline}
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab active" onclick="switchTab('summary',this)">💥 ¿Por qué importa esto?</button>
+    <button class="tab active" onclick="switchTab('history',this)">📜 Perspectiva histórica</button>
+    <button class="tab" onclick="switchTab('summary',this)">💥 ¿Por qué importa esto?</button>
     <button class="tab" onclick="switchTab('fiveA',this)">⭐ Las 5 Aes</button>
     <button class="tab" onclick="switchTab('concepts',this)">🔑 Conceptos clave</button>
   </div>
@@ -216,7 +217,7 @@ footer a:hover{text-decoration:underline}
 <main>
 
 <!-- ═══ PANEL: POR QUÉ IMPORTA ═══ -->
-<div id="panel-summary" class="panel active">
+<div id="panel-summary" class="panel">
 
   <div class="quote-block">
     <img class="quote-bg" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/aula_vacia.png" alt="">
@@ -508,6 +509,106 @@ footer a:hover{text-decoration:underline}
     </div>
 
   </div>
+</div>
+
+<!-- ═══ PANEL: PERSPECTIVA HISTÓRICA ═══ -->
+<div id="panel-history" class="panel active">
+
+  <div class="quote-block">
+    <img class="quote-bg" src="https://raw.githubusercontent.com/Tutorcyllo/clasemagistral2026/main/img/historico.png" alt="">
+    <div class="quote-overlay"></div>
+    <div class="quote-text">La clase magistral nació para resolver la escasez de información; hoy solo tiene sentido si ayuda a interpretar, filtrar y dar sentido a la sobreabundancia.</div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="card">
+    <div class="card-title">🏛️ De dónde partimos</div>
+    <div class="card-body">
+      <p>La clase magistral nació en un contexto de <strong>escasez de información</strong>. Su origen está en la <em>lectio</em>: el docente leía y explicaba un texto que el alumnado no tenía, porque los libros eran escasos. En ese modelo, el profesor era el depositario único del saber y la educación pasó de un proceso de descubrimiento a uno de transmisión fiel de autoridades.</p>
+      <p>Este origen contrasta con la <strong>tradición griega</strong>, donde predominaba la mayéutica, el diálogo y la activación cognitiva. Fue en la universidad medieval donde se consolidó en cambio un flujo unidireccional y pasivo, centrado en el libro como objeto escaso y casi único.</p>
+      <p>La paradoja es clara: fue una innovación tecnológica — el libro — la que ayudó a imponer el modelo expositivo frente al diálogo. La herramienta que debía liberar el conocimiento acabó encerrándolo en un único sentido.</p>
+    </div>
+  </div>
+
+  <!-- LÍNEA DE TIEMPO -->
+  <div class="card">
+    <div class="card-title">🕰️ Hitos en la evolución de la clase magistral</div>
+    <div style="position:relative;padding-left:28px;margin-top:8px">
+      <div style="position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--gray-200)"></div>
+      <div style="margin-bottom:20px;position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--yellow-deep);border:2px solid white;box-shadow:0 0 0 2px var(--yellow-deep)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Antigüedad griega</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">Mayéutica socrática: el conocimiento emerge del diálogo, la pregunta y el conflicto cognitivo. El docente como interlocutor, no como transmisor.</div>
+      </div>
+      <div style="margin-bottom:20px;position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--yellow-deep);border:2px solid white;box-shadow:0 0 0 2px var(--yellow-deep)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Universidad medieval (s. XII–XV)</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">La <em>lectio</em> se consolida: el profesor lee y comenta textos que el alumnado no posee. El libro es escaso; el docente, su único intérprete. Nace el flujo unidireccional.</div>
+      </div>
+      <div style="margin-bottom:20px;position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--yellow-deep);border:2px solid white;box-shadow:0 0 0 2px var(--yellow-deep)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Imprenta (s. XV) — La paradoja</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">El libro se masifica, pero en vez de liberar el modelo, lo refuerza. La clase magistral se consolida como método dominante precisamente cuando ya no era la única fuente de conocimiento.</div>
+      </div>
+      <div style="margin-bottom:20px;position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--yellow-deep);border:2px solid white;box-shadow:0 0 0 2px var(--yellow-deep)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">S. XX — Primeras críticas sistemáticas</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">La pedagogía activa (Dewey, Freire) cuestiona el modelo transmisivo. Aparecen las primeras evidencias sobre los límites de la atención sostenida y el aprendizaje pasivo.</div>
+      </div>
+      <div style="margin-bottom:20px;position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--yellow-deep);border:2px solid white;box-shadow:0 0 0 2px var(--yellow-deep)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">S. XXI — Sobreabundancia e IA</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">El contexto se invierte: ya no hay escasez de información sino exceso. La clase magistral ya no puede justificarse como depósito de contenidos. Su valor se redefine: interpretar, filtrar y dar sentido.</div>
+      </div>
+      <div style="position:relative">
+        <div style="position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--gray-900);border:2px solid white;box-shadow:0 0 0 2px var(--gray-900)"></div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--gray-900);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Hoy — La encrucijada</div>
+        <div style="font-size:0.845rem;color:var(--gray-700);line-height:1.55">¿Seguimos usando la clase magistral como si nada hubiera cambiado desde el siglo XII, o asumimos la responsabilidad pedagógica de transformarla?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="card">
+    <div class="card-title">🧠 Dónde estamos: la crítica del cerebro en pausa</div>
+    <div class="card-body">
+      <p>Hoy el contexto es el contrario al medieval. Vivimos en una situación de <strong>sobreabundancia de información e IA</strong>. La clase magistral ya no puede justificarse como simple depósito de contenidos. Para eso están los PDF, los libros, las redes o la inteligencia artificial.</p>
+      <p>En ciertos formatos expositivos, <strong>la atención cae y la actividad mental se aproxima a un estado de baja activación</strong>, casi de sueño. La pasividad bloquea el pensamiento crítico y el docente como recitador genera dependencia. Pero no solo importa el método: como señala Bradbury (2016), <em>"la mayor variabilidad en la atención de los estudiantes surge de las diferencias entre los docentes, y no del propio formato de enseñanza."</em></p>
+      <p>El problema aparece cuando toda la metodología se apoya <strong>exclusivamente</strong> en esta técnica. Entonces se consolida una metodología tradicional marcada por la unidireccionalidad, el diseño de la pasividad y la sensación de aprender más de lo que realmente se aprende. La estructura física del aula y el sistema de evaluación siguen legitimando esa pasividad.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div class="card">
+    <div class="card-title">🚀 Hacia dónde vamos</div>
+    <div class="card-body">
+      <p>El futuro no se plantea como una desaparición de la clase magistral, sino como la necesidad de <strong>reubicarla</strong>. Su valor ya no está en transmitir datos, sino en dotarlos de sentido. En educación médica: modelar el razonamiento clínico, contagiar entusiasmo y mostrar la humanidad de la profesión.</p>
+      <p>En esa transición, el docente deja de ser un transmisor obsoleto y pasa a ser un <strong>catalizador y curador</strong> que filtra el ruido informativo y lo convierte en saber significativo y conectado. El factor humano sigue siendo decisivo: motivación, modelado cognitivo y clarificación en tiempo real.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px">
+      <div style="background:var(--yellow-pale);border:1px solid var(--yellow-mid);border-radius:8px;padding:14px 16px;text-align:center">
+        <div style="font-size:1.4rem;margin-bottom:6px">💥</div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--gray-900);margin-bottom:4px">1. Conflicto cognitivo</div>
+        <div style="font-size:0.75rem;color:var(--gray-700);line-height:1.5">Primero se rompe la pasividad con un problema real</div>
+      </div>
+      <div style="background:var(--yellow-pale);border:1px solid var(--yellow-mid);border-radius:8px;padding:14px 16px;text-align:center">
+        <div style="font-size:1.4rem;margin-bottom:6px">📖</div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--gray-900);margin-bottom:4px">2. La teoría como necesidad</div>
+        <div style="font-size:0.75rem;color:var(--gray-700);line-height:1.5">La teoría se busca porque hace falta, no porque la impone el programa</div>
+      </div>
+      <div style="background:var(--yellow-pale);border:1px solid var(--yellow-mid);border-radius:8px;padding:14px 16px;text-align:center">
+        <div style="font-size:1.4rem;margin-bottom:6px">🎯</div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--gray-900);margin-bottom:4px">3. Autonomía intelectual</div>
+        <div style="font-size:0.75rem;color:var(--gray-700);line-height:1.5">Mayor autonomía, mejor retención y más pensamiento crítico</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCIA -->
+  <div style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-sm);font-size:0.78rem;color:var(--gray-500);line-height:1.6">
+    Basado en la ponencia <strong style="color:var(--gray-700)">¿El fin del modelo tradicional? (1404–2026)</strong> por Jairo Rodríguez Medina, Departamento de Pedagogía, Universidad de Valladolid.
+  </div>
+
 </div>
 
 <!-- ═══ PANEL: CONCEPTOS ═══ -->
