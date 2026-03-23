@@ -210,6 +210,7 @@ footer a:hover{text-decoration:underline}
     <button class="tab active" onclick="switchTab('history',this)">📜 Perspectiva histórica</button>
     <button class="tab" onclick="switchTab('summary',this)">💥 ¿Por qué importa esto?</button>
     <button class="tab" onclick="switchTab('fiveA',this)">⭐ Las 5 Aes</button>
+    <button class="tab" onclick="switchTab('debate',this)">🗣️ Debate 23.03.26</button>
     <button class="tab" onclick="switchTab('concepts',this)">🔑 Conceptos clave</button>
   </div>
 </div>
@@ -520,6 +521,19 @@ footer a:hover{text-decoration:underline}
     <div class="quote-text">La clase magistral nació para resolver la escasez de información; hoy solo tiene sentido si ayuda a interpretar, filtrar y dar sentido a la sobreabundancia.</div>
   </div>
 
+  <!-- ANÉCDOTA BACON -->
+  <div style="background:var(--white);border:1.5px solid var(--yellow-mid);border-radius:var(--radius);padding:24px 28px;box-shadow:var(--shadow-sm);margin-bottom:14px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--yellow-deep)"></div>
+    <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px">🐴 Anécdota histórica</div>
+    <div style="font-size:0.92rem;font-weight:700;color:var(--gray-900);margin-bottom:12px">Roger Bacon y los dientes del caballo</div>
+    <div style="font-size:0.875rem;color:var(--gray-700);line-height:1.7;font-style:italic">
+      <p style="margin-bottom:10px">Cuenta la historia — probablemente apócrifa, pero reveladora — que un grupo de eruditos medievales debatía acaloradamente cuántos dientes tiene un caballo. Durante horas consultaron los textos de sus abadías, los libros de los sabios, repasaron comentarios de autoridades y citaron textos sagrados. Nadie llegó a una conclusión.</p>
+      <p style="margin-bottom:10px">Bacon habría señalado lo obvio: abrir la boca del caballo y contarlos.</p>
+      <p style="margin-bottom:10px">Lo que hoy nos parece absurdo era entonces el método legítimo de construcción del conocimiento. La <em>lectio</em> no era una opción pedagógica — era la única epistemología posible. El saber no se observaba ni se contrastaba: se heredaba, se transmitía y se reproducía.</p>
+      <p style="font-style:normal;font-weight:600;color:var(--gray-900)">Ochocientos años después, ¿cuántas veces seguimos "consultando al texto" cuando podríamos abrir la boca del caballo?</p>
+    </div>
+  </div>
+
   <!-- SECCIÓN 1 -->
   <div class="card">
     <div class="card-title">🏛️ De dónde partimos</div>
@@ -609,6 +623,167 @@ footer a:hover{text-decoration:underline}
   <!-- REFERENCIA -->
   <div style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-sm);font-size:0.78rem;color:var(--gray-500);line-height:1.6">
     Basado en la ponencia <strong style="color:var(--gray-700)">¿El fin del modelo tradicional? (1404–2026)</strong> por Jairo Rodríguez Medina, Departamento de Pedagogía, Universidad de Valladolid.
+  </div>
+
+</div>
+
+<!-- ═══ PANEL: DEBATE ═══ -->
+<div id="panel-debate" class="panel">
+
+  <!-- CABECERA -->
+  <div style="background:var(--gray-900);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:var(--shadow-sm)">
+    <div style="font-size:0.7rem;font-weight:700;color:var(--yellow-mid);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Sesión de debate · EduMed Valladolid</div>
+    <div style="font-size:1.05rem;font-weight:800;color:var(--yellow);margin-bottom:4px">Debate sobre la clase magistral en educación médica</div>
+    <div style="font-size:0.82rem;color:var(--gray-300)">Anfiteatro 1 · Facultad de Medicina, Universidad de Valladolid · 23 de marzo de 2026 · 16:00 h</div>
+  </div>
+
+  <!-- ACORDEÓN 1 -->
+  <div class="a-card" style="margin-bottom:12px">
+    <div class="a-header" onclick="toggleA(this)">
+      <div class="a-number" style="font-size:1rem;width:40px;height:40px">❓</div>
+      <div class="a-title-wrap">
+        <div class="a-label">Bloque 1</div>
+        <div class="a-name">¿Por qué se sigue manteniendo la clase magistral?</div>
+      </div>
+      <span class="a-chevron">▼</span>
+    </div>
+    <div class="a-body">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">👩‍🎓 Desde el alumnado</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">📚 Hábitos pasivos heredados</td><td class="ex-desc">Los estudiantes llegan con muchos años de instituto y hábitos de aprendizaje pasivos. En primeros cursos se percibe inmadurez y es difícil sacarles del contenido "masticado".</td></tr>
+            <tr><td class="ex-label">😌 Menor esfuerzo percibido</td><td class="ex-desc">A veces prefieren la clase magistral porque les exige menos esfuerzo y dedicación. Las metodologías activas requieren más tiempo de preparación.</td></tr>
+            <tr><td class="ex-label">🎯 Coherencia con el examen</td><td class="ex-desc">Si el examen sigue un modelo clásico, les resulta más lógico preferir la clase magistral. No siempre perciben el beneficio de lo activo ni la importancia de ciertos conocimientos para el futuro.</td></tr>
+            <tr><td class="ex-label">🛡️ Sensación de seguridad</td><td class="ex-desc">La clase magistral también les da sensación de seguridad: saben lo que va a pasar y cómo prepararlo.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">👨‍🏫 Desde el profesorado</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">😌 Comodidad y seguridad</td><td class="ex-desc">La clase magistral resulta más fácil y cómoda. También da seguridad al docente. Hay profesores que creen que nada debe cambiar.</td></tr>
+            <tr><td class="ex-label">🔍 Desconocimiento</td><td class="ex-desc">A veces se mantiene por desconocimiento de metodologías más activas. Innovar supone un aumento de trabajo que no siempre se ve recompensado.</td></tr>
+            <tr><td class="ex-label">⏳ Visión a largo plazo</td><td class="ex-desc">A veces cuesta hacer ver al alumnado que lo que se enseña ahora será importante más adelante.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">🏛️ Desde la organización y el contexto</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">👥 Presión del departamento</td><td class="ex-desc">Los otros miembros del departamento condicionan lo que uno puede hacer. Las grandes estructuras son muy difíciles de mover.</td></tr>
+            <tr><td class="ex-label">⏱️ Tiempo y tamaño del grupo</td><td class="ex-desc">Con poco tiempo y muchos estudiantes, la magistral parece la opción más viable. Hay contenidos que dependen mucho del tamaño del grupo.</td></tr>
+            <tr><td class="ex-label">📋 Naturaleza del contenido</td><td class="ex-desc">Hay contenidos que, por su naturaleza, parecen ajustarse mejor al formato expositivo.</td></tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ACORDEÓN 2 -->
+  <div class="a-card" style="margin-bottom:12px">
+    <div class="a-header" onclick="toggleA(this)">
+      <div class="a-number" style="font-size:1rem;width:40px;height:40px">⚠️</div>
+      <div class="a-title-wrap">
+        <div class="a-label">Bloque 2</div>
+        <div class="a-name">¿Qué nos perdemos si no activamos el aula?</div>
+      </div>
+      <span class="a-chevron">▼</span>
+    </div>
+    <div class="a-body">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">👩‍🎓 Lo que pierde el alumnado</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">😴 Pasividad perpetuada</td><td class="ex-desc">Sigue ocupando un papel más pasivo y mantiene inercias heredadas del instituto en lugar de superarlas.</td></tr>
+            <tr><td class="ex-label">📝 Aprendizaje para el examen</td><td class="ex-desc">Puede acostumbrarse a estudiar solo para un modelo clásico de examen, sin percibir con claridad el valor de implicarse más.</td></tr>
+            <tr><td class="ex-label">🧩 Homogeneización</td><td class="ex-desc">Se homogeneiza algo que debería ser más personal. Se pierden oportunidades de desarrollo individual.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">👨‍🏫 Lo que pierde el profesorado</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">🔄 Estancamiento</td><td class="ex-desc">Se pierden oportunidades de cambio e innovación. Mantener todo igual tiene un coste personal que se mide en niveles de estancamiento y desmotivación.</td></tr>
+            <tr><td class="ex-label">💡 Ilusión docente</td><td class="ex-desc">No pensar en uno mismo como docente limita el cambio que podría favorecer mantener la ilusión y el interés por transmitir la experiencia personal.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">🏛️ Lo que se pierde como cultura docente</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">🔁 Inercia institucional</td><td class="ex-desc">Se refuerza la idea de que nada debe cambiar y se perpetúan estructuras difíciles de mover.</td></tr>
+            <tr><td class="ex-label">🌱 Mejoras desaprovechadas</td><td class="ex-desc">Se desaprovecha la posibilidad de introducir mejoras asumibles y realistas que podrían marcar una diferencia significativa.</td></tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ACORDEÓN 3 -->
+  <div class="a-card" style="margin-bottom:14px">
+    <div class="a-header" onclick="toggleA(this)">
+      <div class="a-number" style="font-size:1rem;width:40px;height:40px">✅</div>
+      <div class="a-title-wrap">
+        <div class="a-label">Bloque 3</div>
+        <div class="a-name">¿Cómo hacer pequeños cambios sin renunciar a la clase magistral?</div>
+      </div>
+      <span class="a-chevron">▼</span>
+    </div>
+    <div class="a-body">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">📋 Respecto a los contenidos</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">✂️ Seleccionar lo nuclear</td><td class="ex-desc">Plantearse que hay cosas que ya no hay que dar. Diferenciar qué contenidos son básicos y hay que saber sí o sí, y seleccionar mejor lo verdaderamente nuclear.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">👨‍🏫 Respecto al profesorado</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">🪞 Pensar también en uno mismo</td><td class="ex-desc">No pensar solo en los alumnos, sino también en uno mismo. Entender la innovación como una forma de cuidar la motivación y la salud mental del docente.</td></tr>
+            <tr><td class="ex-label">🚀 Empezar por algo</td><td class="ex-desc">Aceptar que no hace falta cambiarlo todo para empezar a cambiar algo. El primer paso no tiene que ser una revolución.</td></tr>
+          </table>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:16px 18px;border:1px solid var(--gray-200)">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px">🏛️ Respecto a la institución y al cambio realista</div>
+          <table class="ex-table">
+            <tr><td class="ex-label">🎯 Realismo</td><td class="ex-desc">Asumir que estamos lejos de una revolución y que las grandes estructuras son difíciles de mover. Pero eso no impide los cambios pequeños.</td></tr>
+            <tr><td class="ex-label">🌱 El valor de lo pequeño</td><td class="ex-desc">Aprovechar la oportunidad de los pequeños cambios. Activar el aula dentro de lo posible, aunque sea de forma modesta. Merece la pena intentarlo.</td></tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MENSAJES PARA LLEVARSE A CASA -->
+  <div class="card">
+    <div class="card-title">🏠 Mensajes para llevarse a casa</div>
+    <div class="valid-grid">
+      <div class="valid-item">
+        <div class="valid-icon">🔍</div>
+        <div class="valid-title">Motivos reales</div>
+        <div class="valid-desc">La clase magistral sigue utilizándose por motivos reales del alumnado, del profesorado y del contexto. No es inercia ciega.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">🌱</div>
+        <div class="valid-title">Pequeños cambios, gran impacto</div>
+        <div class="valid-desc">No es necesario revolucionar todo el ecosistema docente, pero sí merece la pena realizar pequeños cambios que activen el aula.</div>
+      </div>
+      <div class="valid-item">
+        <div class="valid-icon">⚠️</div>
+        <div class="valid-title">El coste de no cambiar</div>
+        <div class="valid-desc">No activar el aula tiene costes para todos: para el alumnado, para el profesorado y para la cultura docente.</div>
+      </div>
+    </div>
   </div>
 
 </div>
